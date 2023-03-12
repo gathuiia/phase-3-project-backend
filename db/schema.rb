@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_11_180922) do
+ActiveRecord::Schema.define(version: 2023_03_12_152101) do
 
   create_table "bartender", force: :cascade do |t|
-    t.integer "userid"
+    t.integer "bartender_id"
     t.string "name"
     t.string "bar"
   end
 
   create_table "cocktails", force: :cascade do |t|
-    t.integer "drinkid"
+    t.integer "cocktails_id"
     t.string "name"
+    t.string "style"
     t.string "ingredients"
     t.string "instructions"
-    t.integer "userid"
+    t.integer "bartender_id"
+    t.index ["bartender_id"], name: "index_cocktails_on_bartender_id"
   end
 
 end
