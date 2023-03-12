@@ -1,3 +1,3 @@
 class Cocktail < ActiveRecord::Base 
-    has_one :Bartender
+    belongs_to :bartender
 end
